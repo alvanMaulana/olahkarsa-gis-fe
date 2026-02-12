@@ -1,0 +1,211 @@
+/*Filter Section*/
+.core-filter {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &__search {
+        position: relative;
+        flex: 1;
+
+        input {
+            width: 100%;
+            height: 45px;
+            padding: 0 12px 0 36px;
+            border: 1px solid var(--neutral-50);
+            border-radius: var(--border-radius-input);
+            font-size: 14px;
+
+            &::placeholder {
+                color: var(--neutral-50);
+            }
+        }
+
+        .icon-search {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--neutral-50);
+        }
+    }
+
+    .input-form-date-range {
+        width: 225px;
+        height: 45px !important;
+        padding: 0 12px;
+        border: 1px solid var(--neutral-50);
+        border-radius: var(--border-radius-input);
+        font-size: 14px;
+
+        &::placeholder {
+            color: var(--neutral-50);
+        }
+    }
+
+    .select-filter.ng-select.ng-select-single .ng-select-container {
+        width: 160px;
+        height: 45px !important;
+        border-radius: var(--border-radius-input);
+    }
+}
+
+
+/*Table Style*/
+
+.core-table-wrapper {
+    border-radius: 12px;
+
+
+    &__th-actions {
+        width: 40px;
+    }
+
+    &__td-actions {
+        width: 40px;
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+    }
+
+    .dataTables_length {
+        select {
+            width: 50px !important;
+        }
+
+        label {
+            margin: 0;
+        }
+
+    }
+
+    table {
+        border-bottom: 1px solid var(--neutral-30) !important;
+    }
+
+    &.table> :not(caption)>*>* {
+        border: unset;
+    }
+
+    thead {
+        th {
+            border: unset;
+            border-bottom: 1px solid var(--neutral-30) !important;
+        }
+    }
+
+    tbody {
+        td {
+            vertical-align: middle;
+            border-top: 1px solid #eff2f7;
+
+        }
+
+        tr:hover {
+            color: #101010;
+            background-color: #f8f9fa;
+        }
+
+    }
+
+
+
+    .pagination {
+        gap: 6px;
+
+        .page-item {
+            padding: 0px !important;
+            background: unset !important;
+            border: unset !important;
+            box-shadow: unset !important;
+
+
+            .page-link {
+                border-radius: 4px !important;
+                font-size: 13px;
+            }
+
+            &.previous {
+                margin-right: 18px !important;
+            }
+
+            &.next {
+                margin-left: 18px !important;
+            }
+
+            &.previous,
+            &.next {
+                .page-link {
+                    border-radius: 24px !important;
+                }
+            }
+
+        }
+    }
+
+    .dataTables_empty {
+        display: none;
+    }
+
+    .dataTables_processing {
+        border: unset;
+        ;
+    }
+}
+
+
+.iconBtnAction {
+    width: 15px;
+    height: 15px;
+    background-color: #101010;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+}
+
+/* Button Action Table */
+.table-action {
+    position: relative;
+
+    &__btn {
+        background: transparent;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: var(--neutral-100);
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--neutral-40);
+        border-radius: 4px;
+    }
+
+    &__menu {
+        border-radius: 10px;
+        padding: 0;
+        min-width: 158px;
+        left: unset !important;
+        right: 0 !important;
+        border-radius: 4px;
+
+        button {
+            font-size: 14px;
+            width: 100%;
+            height: 40px;
+            border: unset;
+            border-radius: 4px;
+            text-align: left;
+            background: transparent;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 8px 12px;
+
+            &:hover {
+                background-color: var(--primary-surface);
+            }
+
+        }
+    }
+}

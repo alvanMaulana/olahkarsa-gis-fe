@@ -1,0 +1,39 @@
+/*Breadcrumb*/
+.core-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    &__con_title {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    &__btnback {
+        border: unset;
+        height: 24px;
+        width: 24px;
+        background: unset;
+
+        i {
+            font-size: 20px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--neutral-100);
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--neutral-60);
+        margin-top: 4px;
+        margin-bottom: 0px;
+    }
+}

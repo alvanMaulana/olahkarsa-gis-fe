@@ -1,0 +1,66 @@
+<nav class="sidebar" [ngClass]="{ close: is_close }">
+    <div class="menu-bar" id="sidebar_menu">
+        <div class="menu">
+
+            <!-- ================= BRAND ================= -->
+            <div class="sidebar-brand header-logo">
+                <a *ngIf="!is_close" routerLink="/home">
+                    <img src="assets/images/logo-apk/full.webp" alt="logo">
+                </a>
+                <a *ngIf="is_close" class="p-2" routerLink="/home">
+                    <img src="assets/images/logo-apk/full.webp" alt="logo">
+                </a>
+
+                <div class="p-2 flex toggle-sidebar" [style.left.px]="is_close ? 105 : 230" (click)="setClose()">
+                    <i class="fas" [ngClass]="is_close ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </div>
+            </div>
+
+
+
+            <ul class="menu-links" [ngClass]="{ 'p-3': !is_close }">
+
+                <!-- ================= DASHBOARD ================= -->
+                <!-- <li class="menu-header py-2 px-0 m-2">DASHBOARD</li> -->
+
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    class="nav-link pb-2 px-0 trigger_Dashboard" (mouseenter)="onHover('Dashboard')"
+                    (mouseleave)="onHoverOut('Dashboard')" *ngIf="authService.checkAccess('dashboard.view_dashboard')">
+                    <a class="side-nav-link-ref p-2 mt-1" routerLink="/">
+                        <div class="iconSidebar" style="-webkit-mask:url(assets/icon/png/sidebar/dashboard.png) center/contain;
+             mask:url(assets/icon/png/sidebar/dashboard.png) center/contain;">
+                        </div>
+                        <span class="text nav-text ms-3">Dashboard</span>
+                    </a>
+
+                    <div class="tooltip-sidebar element_Dashboard" [style.top.px]="fixedElementTop" *ngIf="is_close">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner-custom p-2">Dashboard</div>
+                    </div>
+                </li>
+
+
+                <li routerLinkActive="active" class="nav-link pb-2 px-0 trigger_ManagementAdmin"
+                    (mouseenter)="onHover('ManagementAdmin')" (mouseleave)="onHoverOut('ManagementAdmin')"
+                    *ngIf="authService.checkAccess('admin_mgmt.view_admin')">
+
+                    <a class="side-nav-link-ref p-2 mt-1" routerLink="/management-admin">
+                        <div class="iconSidebar" style="-webkit-mask:url(assets/icon/icon_management_admin.png) center/contain;
+                     mask:url(assets/icon/icon_management_admin.png) center/contain;">
+                        </div>
+                        <span class="text nav-text ms-3">Management Admin</span>
+                    </a>
+
+                    <div class="tooltip-sidebar element_ManagementAdmin" [style.top.px]="fixedElementTop"
+                        *ngIf="is_close">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner-custom p-2">Management Admin</div>
+                    </div>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

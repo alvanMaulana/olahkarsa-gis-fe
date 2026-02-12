@@ -1,0 +1,133 @@
+.badge-tags {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-right: 4px;
+
+    /* SOLID DEFAULT */
+    background-color: var(--bedgeTag-bg);
+    color: var(--bedgeTag-text, #fff);
+    border: 1px solid var(--bedgeTag-border);
+
+
+    /* ==============================
+        OUTLINE VARIANT
+    ============================== */
+    &--outline {
+        background-color: var(--bedgeTag-surface);
+        color: var(--bedgeTag-font);
+        border-color: var(--bedgeTag-bg);
+    }
+
+
+    &--blue {
+        --bedgeTag-bg: var(--primary-main);
+        --bedgeTag-font: var(--primary-main);
+        --bedgeTag-border: var(--primary-main);
+        --bedgeTag-surface: var(--primary-surface);
+    }
+
+    &--yellow {
+        --bedgeTag-bg: var(--secondary-main);
+        --bedgeTag-font: var(--secondary-main);
+        --bedgeTag-border: var(--secondary-main);
+        --bedgeTag-surface: var(--secondary-surface);
+    }
+
+
+
+}
+
+
+
+
+.badge-status {
+    display: inline-block;
+    padding: 2px 8px;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 4px;
+
+    /* SOLID DEFAULT */
+    background-color: var(--bedgeStatus-bg);
+    color: var(--bedgeStatus-font, #fff);
+    border: 1px solid var(--bedgeStatus-border);
+
+    &--gray {
+        --bedgeStatus-bg: var(--neutral-30);
+        --bedgeStatus-font: var(--neutral-100);
+        --bedgeStatus-border: var(--neutral-30);
+        --bedgeStatus-surface: var(--neutral-30);
+    }
+
+    &--blue {
+        --bedgeStatus-bg: var(--primary-surface);
+        --bedgeStatus-font: var(--primary-main);
+        --bedgeStatus-border: var(--primary-surface);
+        --bedgeStatus-surface: var(--primary-surface);
+    }
+
+    &--yellow {
+        --bedgeStatus-bg: var(--secondary-surface);
+        --bedgeStatus-font: var(--secondary-main);
+        --bedgeStatus-border: var(--secondary-surface);
+        --bedgeStatus-surface: var(--secondary-surface);
+    }
+
+    &--purple {
+        --bedgeStatus-bg: var(--info-surface);
+        --bedgeStatus-font: var(--info-main);
+        --bedgeStatus-border: var(--info-surface);
+        --bedgeStatus-surface: var(--info-surface);
+    }
+
+    &--red {
+        --bedgeStatus-bg: var(--error-surface);
+        --bedgeStatus-font: var(--error-main);
+        --bedgeStatus-border: var(--error-surface);
+        --bedgeStatus-surface: var(--error-surface);
+    }
+
+    &--green {
+        --bedgeStatus-bg: var(--success-surface);
+        --bedgeStatus-font: var(--success-main);
+        --bedgeStatus-border: var(--success-surface);
+        --bedgeStatus-surface: var(--success-surface);
+    }
+
+
+
+}
+
+
+.badge-status-solid {
+    display: inline-block;
+    padding: 2px 8px;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 4px;
+
+    /* SOLID DEFAULT */
+    background-color: var(--bedgeStatusSolid-bg);
+    color: var(--bedgeStatusSolid-font);
+
+  
+
+    &--purple {
+        --bedgeStatusSolid-bg: var(--info-main);
+        --bedgeStatusSolid-font: #fff;
+        --bedgeStatusSolid-surface: var(--info-surface);
+    }
+
+    &--green {
+        --bedgeStatusSolid-bg: var(--success-main);
+        --bedgeStatusSolid-font: #fff;
+        --bedgeStatusSolid-surface: var(--success-surface);
+    }
+
+
+
+}

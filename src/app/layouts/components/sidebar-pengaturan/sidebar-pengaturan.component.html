@@ -1,0 +1,79 @@
+<nav class="sidebar" [ngClass]="{ close: is_close }">
+    <div class="menu-bar" id="sidebar_menu">
+        <div class="menu">
+
+            <!-- ================= BRAND ================= -->
+            <div class="sidebar-brand header-logo">
+                <a *ngIf="!is_close" routerLink="/home">
+                    <img src="assets/images/bri-peduli-logo.webp" alt="logo">
+                </a>
+                <a *ngIf="is_close" class="p-2" routerLink="/home">
+                    <img src="assets/images/bri-peduli-logo.webp" alt="logo">
+                </a>
+
+                <div class="p-2 flex toggle-sidebar" [style.left.px]="is_close ? 105 : 230" (click)="setClose()">
+                    <i class="fas" [ngClass]="is_close ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </div>
+            </div>
+
+
+
+            <ul class="menu-links" [ngClass]="{ 'p-3': !is_close }">
+                <li [routerLinkActive]="['active']" class="nav-link py- px-0 trigger_BtnBack"
+                    (mouseenter)="onHover('BtnBack')" (mouseleave)="onHoverOut('BtnBack')"
+                    [routerLinkActive]="['active']">
+                    <a type="button" role="button"
+                        class="side-nav-link-ref text-white btn btn-shadow btn-primary p-2 m-2" href="/"
+                        click="setCloseDataProgram()" routerLinkActive="router-link-active">
+                        <i class='bx bx-left-arrow-alt font-size-14 me-1' style="width: fit-content;"></i>
+                        <span class="text nav-text font-size-12">Kembali</span>
+                    </a>
+                    <div class="tooltip-sidebar element_BtnBack" [style.top]="fixedElementTop + 'px'" *ngIf="is_close">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner-dashboard p-2">
+                            Kembali</div>
+                    </div>
+                </li>
+
+
+                <!-- ================= DASHBOARD ================= -->
+                <!-- <li class="menu-header py-2 px-0 m-2">DASHBOARD</li> -->
+
+
+                <li routerLinkActive="active" class="nav-link pb-2 px-0 trigger_InformasiAkun"
+                    (mouseenter)="onHover('InformasiAkun')" (mouseleave)="onHoverOut('InformasiAkun')">
+
+                    <a class="side-nav-link-ref p-2 mt-1" [routerLink]="['/pengaturan', 'informasi-akun']">
+                        <div class="iconSidebar" style="-webkit-mask:url(assets/icon/icon_informasi_akun.png) center/contain;
+                     mask:url(assets/icon/icon_informasi_akun.png) center/contain;">
+                        </div>
+                        <span class="text nav-text ms-3">Informasi Akun</span>
+                    </a>
+
+                    <div class="tooltip-sidebar element_InformasiAkun" [style.top.px]="fixedElementTop"
+                        *ngIf="is_close">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner-custom p-2">Informasi Akun</div>
+                    </div>
+                </li>
+
+                <li routerLinkActive="active" class="nav-link pb-2 px-0 trigger_GantiPassword"
+                    (mouseenter)="onHover('GantiPassword')" (mouseleave)="onHoverOut('GantiPassword')">
+
+                    <a class="side-nav-link-ref p-2 mt-1" [routerLink]="['/pengaturan', 'ganti-password']">
+                        <div class="iconSidebar" style="-webkit-mask:url(assets/icon/icon_ganti_password.png) center/contain;
+                     mask:url(assets/icon/icon_ganti_password.png) center/contain;">
+                        </div>
+                        <span class="text nav-text ms-3">Ganti Password</span>
+                    </a>
+
+                    <div class="tooltip-sidebar element_GantiPassword" [style.top.px]="fixedElementTop"
+                        *ngIf="is_close">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner-custom p-2">Ganti Password</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

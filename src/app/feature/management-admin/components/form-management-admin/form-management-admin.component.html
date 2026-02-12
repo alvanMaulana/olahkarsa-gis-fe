@@ -1,0 +1,82 @@
+<div class="container-form">
+    <div class="card-form card-form--lg">
+        <div class="form-header">
+            <button class="btn-back" type="button" (click)="goToList()">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <p class="form-title">{{activeMode==MODE_UPDATE?'Edit Program':'Tambah Program'}}</p>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label for="name" class="form-label required">Nama Lengkap</label>
+                <input type="name" class="form-control form-control-custom" id="name" name="name"
+                    [(ngModel)]="formModel.name" (change)="checkValidasi()" placeholder="MasukkanNama Lengkap"
+                    (keyup.enter)="saveForm()">
+                <span class="text-error-validation" id="name_error"></span>
+            </div>
+
+            <div class="col-md-6 col-12">
+                <label for="email" class="form-label required">Email</label>
+                <input type="email" class="form-control form-control-custom" id="email" name="email"
+                    [(ngModel)]="formModel.email" (change)="checkValidasi()" placeholder="Email"
+                    (keyup.enter)="saveForm()">
+                <span class="text-error-validation" id="email_error"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label for="password" class="form-label">Password</label>
+                <div class="password-wrapper">
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control form-control-custom"
+                        id="password" name="password" [(ngModel)]="formModel.password" (change)="checkValidasi()"
+                        placeholder="Password" (keyup.enter)="saveForm()">
+                    <button type="button" class="password-toggle" (click)="togglePassword()">
+                        <svg *ngIf="!showPassword" width="20" height="20" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <svg *ngIf="showPassword" width="20" height="20" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                        </svg>
+                    </button>
+                </div>
+                <span class="text-error-validation" id="password_error"></span>
+            </div>
+
+            <div class="col-md-6 col-12">
+                <label for="roles" class="form-label required">Role</label>
+                <ng-select [(ngModel)]="formModel.roles" id="roles" placeholder="Pilih role" [items]="listAllRole"
+                    [clearable]="false" bindValue="name" bindLabel="display_name" name="roles"
+                    class="form-select-custom" (change)="checkValidasi()">
+                </ng-select>
+                <span class="text-error-validation" id="roles_error"></span>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-end gap-3 mt-5">
+            <div style="width: 150px;">
+                <button type="button" class="v-btn v-btn--primary w-full v-btn--outline" (click)="goToList()">
+                    Kembali
+                </button>
+            </div>
+            <div style="width: 150px;">
+                <button type="button" class="v-btn v-btn--primary w-full" [disabled]="isSubmitting"
+                    (click)="saveForm()">
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

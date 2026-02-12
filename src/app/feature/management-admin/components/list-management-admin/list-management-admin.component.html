@@ -1,0 +1,101 @@
+<div class="container-content">
+    <!-- ================= HEADER / BREADCRUMB ================= -->
+    <section class="core-page-header">
+        <div class="core-page-header__left">
+            <h1 class="core-page-header__title">Manajemen User & Admin</h1>
+            <p class="core-page-header__subtitle">
+                Kelola akun admin, super admin, dan viewer untuk memastikan pengelolaan dashboard BRI Peduli <br> tetap
+                aman dan
+                terkontrol.
+            </p>
+        </div>
+
+        <div class="core-page-header__right">
+            <button type="button" class="v-btn v-btn--primary w-full" [routerLink]="['/management-admin/create']">
+                Tambah User Baru
+            </button>
+        </div>
+    </section>
+
+
+    <!-- ================= FILTER ================= -->
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <section class="core-filter">
+                <!-- SEARCH -->
+                <div class="core-filter__search">
+                    <div class="icon-search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <input type="text" placeholder="Cari user berdasarkan nama/email" [(ngModel)]="filter.keyword"
+                        (input)="applyFilter()" />
+                </div>
+
+                <!-- ROLE -->
+                <ng-select [(ngModel)]="filter.role" placeholder="Pilih role" [items]="listAllRoles" [clearable]="true"
+                    bindValue="id" bindLabel="display_name" name="role" class="form-select-custom select-filter"
+                    (change)="reloadDataTable()">
+                </ng-select>
+
+                <!-- STATUS -->
+                <ng-select [(ngModel)]="filter.status" placeholder="Pilih status" [items]="listAllStatus"
+                    [clearable]="true" bindValue="id" bindLabel="name" name="role"
+                    class="form-select-custom select-filter" (change)="reloadDataTable()">
+                </ng-select>
+            </section>
+        </div>
+    </div>
+
+
+
+    <!-- ================= TABLE ================= -->
+    <div style="padding: 1rem;">
+        <section class="table table-hover core-table-wrapper">
+            <table datatable [dtOptions]="dtOptions">
+                <thead>
+                    <tr>
+                        <th>Nama User</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th style="width: 50px;">Status</th>
+                        <th class="text-center ">Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let dt of listDataTables">
+                        <td>{{ dt.name }}</td>
+                        <td>{{ dt.email }}</td>
+                        <td>{{ dt.email }}</td>
+                        <td>{{ dt.email }}</td>
+                        <td class="text-center core-table-wrapper__td-actions">
+                            <div class="table-action" ngbDropdown>
+                                <button ngbDropdownToggle class="table-action__btn">⋮</button>
+                                <div ngbDropdownMenu class="table-action__menu">
+                                    <button [routerLink]="['/management-admin', dt.id, 'edit']">
+                                        <div class="iconBtnAction" style="-webkit-mask:url(assets/icon/icon_pencil.png) center/contain;
+                     mask:url(assets/icon/icon_pencil.png) center/contain;">
+                                        </div>
+                                        Ubah
+                                    </button>
+                                    <button>
+                                        <div class="iconBtnAction" style="-webkit-mask:url(assets/icon/icon_user_gear.png) center/contain;
+                     mask:url(assets/icon/icon_user_gear.png) center/contain;">
+                                        </div>
+                                        Ubah Role
+                                    </button>
+                                    <button>
+                                        <div class="iconBtnAction" style="-webkit-mask:url(assets/icon/icon_trash.png) center/contain;
+                     mask:url(assets/icon/icon_trash.png) center/contain;">
+                                        </div>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<ngx-spinner bdColor="rgba(0,0,0,.20)" size="medium" color="rgba(2,117,216,0.9)" type="ball-pulse" [fullScreen]="false">
+    <p style="color: white; font-weight: bold;"> Loading... </p>
+</ngx-spinner>
+
+<ngx-spinner bdColor="rgba(0,0,0,.20)" [name]="'custom'" size="medium" color="rgba(2,117,216,0.9)" type="ball-pulse"
+    [fullScreen]="false">
+    <p style="color: white; font-weight: bold;"> Loading... </p>
+</ngx-spinner>
+
+
+<router-outlet *ngIf="!isLoadingLoginUrl"></router-outlet>

@@ -1,0 +1,92 @@
+<div class="app-container">
+    <!-- Top Controls -->
+    <div class="top-controls">
+        <div class="layer-section">
+            <button class="btn-primary" (click)="showCreateLayerForm()">
+                + New Layer
+            </button>
+
+            <select class="layer-select" [(ngModel)]="currentLayerId" (change)="onLayerChange()">
+                <option [value]="null">Select Layer</option>
+                <option *ngFor="let layer of layers" [value]="layer.id">
+                    {{ layer.name }}
+                </option>
+            </select>
+
+            <button class="btn-success" (click)="saveAllFeatures()" [disabled]="!currentLayerId">
+                💾 Save All
+            </button>
+        </div>
+    </div>
+
+    <!-- Layer Form Modal -->
+    <div class="modal-overlay" *ngIf="showLayerForm" (click)="cancelLayerForm()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <h3>Create New Layer</h3>
+
+            <div class="form-group">
+                <label>Layer Name *</label>
+                <input type="text" [(ngModel)]="layerForm.name" placeholder="Enter layer name" />
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea [(ngModel)]="layerForm.description" placeholder="Enter description" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Layer Type</label>
+                <select [(ngModel)]="layerForm.layer_type">
+                    <option value="project">Project</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-secondary" (click)="cancelLayerForm()">Cancel</button>
+                <button class="btn-primary" (click)="createLayer()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drawing Controls -->
+    <!-- <div class="drawing-controls">
+        <button (click)="drawRectangle()">📐 Rectangle</button>
+        <button (click)="drawPolygon()">⬡ Polygon</button>
+        <button (click)="drawCircle()">⭕ Circle</button>
+        <button (click)="drawLine()">📏 Line</button>
+        <button (click)="cutLayer()">✂️ Cut</button>
+        <button (click)="enableRemovalMode()" class="btn-danger">🗑️ Delete</button>
+        <button (click)="clearAllShapes()" class="btn-warning">🧹 Clear All</button>
+    </div> -->
+
+    <!-- Zoom Controls -->
+    <!-- <div class="zoom-controls">
+        <button (click)="zoomIn()">+</button>
+        <button (click)="zoomOut()">-</button>
+    </div> -->
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <div class="stats-panel">
+        <div class="stat-item">
+            <span class="stat-icon">📍</span>
+            <div class="stat-content">
+                <span class="stat-label">Features</span>
+                <span class="stat-value">{{ drawnFeatures.length }}</span>
+            </div>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-item" *ngIf="totalArea > 0">
+            <span class="stat-icon">📐</span>
+            <div class="stat-content">
+                <span class="stat-label">Total Area</span>
+                <span class="stat-value">{{ totalAreaFormatted }}</span>
+            </div>
+        </div>
+    </div>
+</div>

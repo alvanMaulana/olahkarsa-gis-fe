@@ -1,0 +1,226 @@
+/* =====================================================
+   BUTTON BASE (SOLID DEFAULT)
+===================================================== */
+.v-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  padding: 12px 16px;
+  gap: 8px;
+
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+
+  /* SOLID DEFAULT */
+  background-color: var(--btn-bg);
+  color: var(--btn-text, #fff);
+  border: 1px solid var(--btn-border);
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  /* ==============================
+     OUTLINE VARIANT
+  ============================== */
+  &--outline {
+    background-color: transparent;
+    color: var(--btn-font);
+    border-color: var(--btn-bg);
+
+    &:hover {
+      background-color: var(--btn-surface);
+    }
+
+    &:active {
+      background-color: var(--btn-bg);
+      color: #fff;
+    }
+  }
+
+  /* ==============================
+     PRIMARY
+  ============================== */
+  &--primary {
+    --btn-bg: var(--primary-main);
+    --btn-font: var(--primary-main);
+    --btn-border: var(--primary-main);
+    --btn-surface: var(--primary-surface);
+
+    &:hover {
+      --btn-bg: var(--primary-hover);
+      --btn-border: var(--primary-hover);
+    }
+
+    &:active {
+      --btn-bg: var(--primary-pressed);
+      --btn-border: var(--primary-pressed);
+    }
+  }
+
+
+  /* ==============================
+     NEUTRAL
+  ============================== */
+  &--neutral {
+    --btn-bg: var(--neutral-30);
+    --btn-font: var(--neutral-100);
+    --btn-border: var(--neutral-30);
+    --btn-surface: var(--neutral-20);
+
+    &:hover {
+      --btn-bg: var(--neutral-20);
+      --btn-border: var(--neutral-30);
+    }
+
+    &:active {
+      --btn-bg: var(--neutral-20);
+      --btn-border: var(--neutral-30);
+    }
+  }
+
+}
+
+
+
+
+
+
+.v-btn-select {
+  position: relative;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    height: 45px;
+    padding: 12px 16px;
+    gap: 8px;
+
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+
+    &--outline-gray {
+      background-color: transparent;
+      color: var(--neutral-100);
+      border-color: var(--neutral-40);
+    }
+
+
+
+    &--blue {
+      color: var(--primary-main);
+      border-color: var(--primary-main);
+      background-color: var(--primary-surface);
+    }
+
+    &--green {
+      color: var(--success-main);
+      border-color: var(--success-main);
+      background-color: var(--success-surface);
+    }
+
+    &--gray {
+      color: var(--neutral-100);
+      border-color: var(--neutral-100);
+      background-color: var(--neutral-20);
+    }
+
+    &--red {
+      color: var(--error-main);
+      border-color: var(--error-main);
+      background-color: var(--error-surface);
+    }
+
+    &--yellow {
+      color: var(--secondary-main);
+      border-color: var(--secondary-main);
+      background-color: var(--secondary-surface);
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &--blue {
+      background-color: var(--primary-main);
+    }
+
+    &--green {
+      background-color: var(--success-main);
+    }
+
+    &--gray {
+      background-color: var(--neutral-100);
+    }
+
+    &--red {
+      background-color: var(--error-main);
+    }
+
+    &--yellow {
+      background-color: var(--secondary-main);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 6px 0;
+    min-width: 160px;
+    z-index: 100;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1f2937;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+  }
+}
+
+
+.btn-inline {
+  cursor: pointer;
+
+  &--primary {
+    color: var(--primary-main);
+  }
+}

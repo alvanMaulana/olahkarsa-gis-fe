@@ -1,0 +1,203 @@
+/* ================================================================================================================================================
+   COLOR PALETTE (BASE COLORS)
+   ================================================================================================================================================ */
+
+/* =================================
+   BLUE
+================================= */
+$blue-main: #2F5CAA;
+$blue-surface: #DEEEFD;
+$blue-border: #C1EAEB;
+$blue-hover: #285095;
+$blue-pressed: #1B4285;
+$blue-focus: #1B4285;
+
+/* =================================
+   YELLOW
+================================= */
+$yellow-main: #FFD33C;
+$yellow-surface: #FFF6D8;
+$yellow-border: #FFF0BE;
+$yellow-hover: #D5B032;
+$yellow-pressed: #BD8A14;
+$yellow-focus: #FFF6D8;
+
+/* =================================
+   GREEN
+================================= */
+$green-main: #60CDB8;
+$green-surface: #F2FFF8;
+$green-border: #C5EED8;
+$green-hover: #46B277;
+$green-pressed: #2B593F;
+$green-focus: #DCF5E7;
+
+/* =================================
+   RED
+================================= */
+$red-main: #F14141;
+$red-surface: #FFF2F2;
+$red-border: #FACDCD;
+$red-hover: #CD3A3A;
+$red-pressed: #BD2A2A;
+$red-focus: #FCDDD0;
+
+/* =================================
+   PURPLE
+================================= */
+$purple-main: #7239EA;
+$purple-surface: #F6F3FF;
+$purple-border: #DDD8F8;
+$purple-hover: #6533D1;
+$purple-pressed: #3F2478;
+$purple-focus: #E3D7F8;
+
+/* =================================
+   NEUTRAL
+================================= */
+$neutral-10: #FFFFFF;
+$neutral-20: #F5F5F5;
+$neutral-30: #EDEDED;
+$neutral-40: #D5D6D8;
+$neutral-50: #C2C2C2;
+$neutral-60: #878787;
+$neutral-70: #6B6B6D;
+$neutral-80: #383838;
+$neutral-90: #403A3A;
+$neutral-100: #101010;
+
+
+
+
+
+
+/* ================================================================================================================================================
+   SEMANTIC COLORS (ROLE-BASED)
+   ================================================================================================================================================ */
+
+/* =================================
+   PRIMARY
+================================= */
+$primary-main: $blue-main;
+$primary-surface: $blue-surface;
+$primary-border: $blue-border;
+$primary-hover: $blue-hover;
+$primary-pressed: $blue-pressed;
+$primary-focus: $blue-focus;
+
+/* =================================
+   SECONDARY
+================================= */
+$secondary-main: $yellow-main;
+$secondary-surface: $yellow-surface;
+$secondary-border: $yellow-border;
+$secondary-hover: $yellow-hover;
+$secondary-pressed: $yellow-pressed;
+$secondary-focus: $yellow-focus;
+
+/* =================================
+   SUCCESS
+================================= */
+$success-main: $green-main;
+$success-surface: $green-surface;
+$success-border: $green-border;
+$success-hover: $green-hover;
+$success-pressed: $green-pressed;
+$success-focus: $green-focus;
+
+/* =================================
+   ERROR
+================================= */
+$error-main: $red-main;
+$error-surface: $red-surface;
+$error-border: $red-border;
+$error-hover: $red-hover;
+$error-pressed: $red-pressed;
+$error-focus: $red-focus;
+
+/* =================================
+   INFO
+================================= */
+$info-main: $purple-main;
+$info-surface: $purple-surface;
+$info-border: $purple-border;
+$info-hover: $purple-hover;
+$info-pressed: $purple-pressed;
+$info-focus: $purple-focus;
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+   /* =================================
+     PRIMARY
+  ================================= */
+   --primary-main: #{$primary-main};
+   --primary-surface: #{$primary-surface};
+   --primary-border: #{$primary-border};
+   --primary-hover: #{$primary-hover};
+   --primary-pressed: #{$primary-pressed};
+   --primary-focus: #{$primary-focus};
+
+   /* =================================
+     SECONDARY
+  ================================= */
+   --secondary-main: #{$secondary-main};
+   --secondary-surface: #{$secondary-surface};
+   --secondary-border: #{$secondary-border};
+   --secondary-hover: #{$secondary-hover};
+   --secondary-pressed: #{$secondary-pressed};
+   --secondary-focus: #{$secondary-focus};
+
+   /* =================================
+     SUCCESS
+  ================================= */
+   --success-main: #{$success-main};
+   --success-surface: #{$success-surface};
+   --success-border: #{$success-border};
+   --success-hover: #{$success-hover};
+   --success-pressed: #{$success-pressed};
+   --success-focus: #{$success-focus};
+
+   /* =================================
+     ERROR
+  ================================= */
+   --error-main: #{$error-main};
+   --error-surface: #{$error-surface};
+   --error-border: #{$error-border};
+   --error-hover: #{$error-hover};
+   --error-pressed: #{$error-pressed};
+   --error-focus: #{$error-focus};
+
+   /* =================================
+     INFO
+  ================================= */
+   --info-main: #{$info-main};
+   --info-surface: #{$info-surface};
+   --info-border: #{$info-border};
+   --info-hover: #{$info-hover};
+   --info-pressed: #{$info-pressed};
+   --info-focus: #{$info-focus};
+
+   /* =================================
+     NEUTRAL
+  ================================= */
+   --neutral-10: #{$neutral-10};
+   --neutral-20: #{$neutral-20};
+   --neutral-30: #{$neutral-30};
+   --neutral-40: #{$neutral-40};
+   --neutral-50: #{$neutral-50};
+   --neutral-60: #{$neutral-60};
+   --neutral-70: #{$neutral-70};
+   --neutral-80: #{$neutral-80};
+   --neutral-90: #{$neutral-90};
+   --neutral-100: #{$neutral-100};
+}

@@ -1,0 +1,240 @@
+/* Form Controls */
+.container-form {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-form {
+        width: calc(100% - 40px);
+        box-shadow: var(--shadow-box);
+        border: 1px solid var(--neutral-30);
+        border-radius: var(--border-radius-card);
+        padding: 24px 32px;
+
+        &--sm {
+            width: calc(60%);
+        }
+
+        &--lg {
+            width: calc(100% - 120px);
+        }
+
+        @media (max-width: 576px) {
+            width: 100%;
+
+            &--sm,
+            &--lg {
+                width: 100%;
+            }
+        }
+
+        .form-header {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 8px;
+            align-items: center;
+
+
+            .btn-back {
+                border: unset;
+                height: 24px;
+                width: 24px;
+                background: unset;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+
+            .form-title {
+                font-size: 24px;
+                margin: 0;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}
+
+.form-control-custom {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid var(--neutral-50);
+    border-radius: var(--border-radius-input);
+    transition: all 0.2s;
+    height: var(--height-form);
+
+
+    &:focus {
+        border-color: var(--primary-main);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    &::placeholder {
+        color: var(--neutral-50);
+    }
+}
+
+
+
+.input-group-calender {
+    width: calc(100% - 15px);
+
+    .form-control-custom {
+        border-right: unset;
+    }
+
+    .input-group-text-calender {
+        border: 1px solid var(--neutral-50);
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+    }
+}
+
+.form-control-custom-textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    height: 150px !important;
+    border: 1px solid var(--neutral-50);
+    border-radius: var(--border-radius-input);
+    transition: all 0.2s;
+    height: var(--height-form);
+
+
+    &:focus {
+        border-color: var(--primary-main);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    &::placeholder {
+        color: var(--neutral-50);
+    }
+}
+
+
+
+
+
+
+.form-select-custom {
+    &.has-danger {
+        border: unset !important;
+
+        .ng-select-container {
+            border-color: var(--error-main);
+        }
+    }
+
+    &.ng-select.ng-select-single .ng-select-container {
+        height: var(--height-form) !important;
+    }
+
+    &.ng-select.ng-select-multiple .ng-select-container {
+        height: var(--height-form) !important;
+
+        .ng-placeholder {
+            top: 35%;
+        }
+
+        .ng-value {
+            background-color: var(--primary-surface);
+            color: var(--primary-main);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+
+            .ng-value-icon {
+                border: unset !important;
+                background: var(--primary-main);
+                margin: 2px;
+                margin-left: 5px;
+                padding: 0px;
+                height: 13px;
+                width: 13px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2px;
+                color: white;
+
+                &:hover {
+                    background-color: var(--primary-hover);
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+.core-table-wrapper--with-form {
+    .form-control-custom {
+        height: var(--height-form-table);
+    }
+
+    .form-control-custom-textarea {
+        height: var(--height-form-table);
+    }
+
+    .form-select-custom {
+
+        &.ng-select.ng-select-single .ng-select-container {
+            height: var(--height-form-table) !important;
+        }
+
+        &.ng-select.ng-select-multiple .ng-select-container {
+            height: var(--height-form-table) !important;
+        }
+    }
+}
+
+
+
+/* Form Styles */
+.form-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutral-100);
+    margin-bottom: 8px;
+
+    &.required::after {
+        content: '*';
+        color: var(--error-main);
+        margin-left: 4px;
+    }
+}
+
+/* Password Field */
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: #6b7280;
+}
