@@ -16,6 +16,19 @@
             <button class="btn-success" (click)="saveAllFeatures()" [disabled]="!currentLayerId">
                 💾 Save All
             </button>
+
+            <div class="theme-divider"></div>
+
+            <label class="theme-label">Tema Peta</label>
+            <select
+                class="layer-select theme-select"
+                [ngModel]="selectedThemeIndex"
+                (ngModelChange)="changeMapTheme($event)"
+            >
+                <option *ngFor="let theme of mapThemes; let i = index" [ngValue]="i">   
+                    {{ theme.label }}
+                </option>
+            </select>
         </div>
     </div>
 

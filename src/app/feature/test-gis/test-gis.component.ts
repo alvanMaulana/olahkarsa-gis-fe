@@ -602,8 +602,28 @@ interface LayerData {
 export class TestGisComponent implements AfterViewInit, OnDestroy {
 
   map!: L.Map;
+  currentTileLayer!: L.TileLayer;
   currentLayerId: number | null = null;
   layers: any[] = [];
+
+  // Map theme options
+  mapThemes = [
+    { label: 'OpenStreetMap', url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: '&copy; OpenStreetMap', maxZoom: 19 },
+    { label: 'Stadia Alidade Smooth', url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Alidade Smooth Dark', url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Alidade Satellite', url: 'https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', attribution: '&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia OSM Bright', url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Outdoors', url: 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Stamen Toner', url: 'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; Stamen Design &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Stamen Toner Lite', url: 'https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; Stamen Design &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 20 },
+    { label: 'Stadia Stamen Watercolor', url: 'https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}{r}.jpg', attribution: '&copy; Stadia Maps &copy; Stamen Design &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 16 },
+    { label: 'Stadia Stamen Terrain', url: 'https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png', attribution: '&copy; Stadia Maps &copy; Stamen Design &copy; OpenMapTiles &copy; OpenStreetMap', maxZoom: 18 },
+    { label: 'CartoDB Positron', url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 20 },
+    { label: 'CartoDB Dark Matter', url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 20 },
+    { label: 'Esri World Street Map', url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', attribution: '&copy; Esri', maxZoom: 19 },
+    { label: 'Esri World Imagery', url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', attribution: '&copy; Esri', maxZoom: 19 },
+  ];
+  selectedThemeIndex = 0;
 
   // Layer form
   showLayerForm = false;
@@ -645,9 +665,21 @@ export class TestGisComponent implements AfterViewInit, OnDestroy {
       scrollWheelZoom: true
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19
+    const theme = this.mapThemes[this.selectedThemeIndex];
+    this.currentTileLayer = L.tileLayer(theme.url, {
+      attribution: theme.attribution,
+      maxZoom: theme.maxZoom
+    }).addTo(this.map);
+  }
+
+  changeMapTheme(index: number) {
+    this.selectedThemeIndex = index;
+    const theme = this.mapThemes[index];
+
+    this.map.removeLayer(this.currentTileLayer);
+    this.currentTileLayer = L.tileLayer(theme.url, {
+      attribution: theme.attribution,
+      maxZoom: theme.maxZoom
     }).addTo(this.map);
   }
 
