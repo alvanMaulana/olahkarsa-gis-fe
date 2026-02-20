@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     // Check if user already logged in
     if (this.authService.getToken()) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin']);
     }
   }
 
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
       next: (res: any) => {
         this.authService.saveToken(res.data.access_token).then(() => {
           this.authService.saveUserLogin();
-          this.router.navigate(['/']);
+          this.router.navigate(['/admin']);
         });
       },
       error: (err: any) => {

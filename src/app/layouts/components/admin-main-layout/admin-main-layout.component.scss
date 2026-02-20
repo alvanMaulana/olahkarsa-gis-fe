@@ -1,0 +1,379 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap');
+
+#page-topbar {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1002;
+    background-color: #fff;
+}
+
+.sidebar * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.offCanvas {
+    z-index: 1003 !important;
+    position: relative;
+}
+
+.offCanvas.show {
+    width: 100%;
+}
+
+/* ===== Home Content ===== */
+.home {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: 100%;
+}
+
+.home.no-sidebar {
+    left: 0 !important;
+    width: 100%;
+}
+
+/* Sidebar Mini Mode */
+.offCanvas.show~.home {
+    left: var(--width-mini-sidebar);
+    height: 100vh;
+    width: 100%;
+    transition: all .6s;
+}
+
+.sidebar.close~.home {
+    left: var(--width-mini-sidebar);
+    height: 100vh;
+    width: 100%;
+    transition: all .6s;
+}
+
+.sidebar.close {
+    width: var(--width-mini-sidebar);
+    transition: all .6s;
+    opacity: 1 !important;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    height: 80px;
+}
+
+.navbar-top {
+    padding: 0.5rem 1rem;
+}
+
+.removePadding {
+    padding: 0 !important;
+}
+
+/* ===== Notifikasi ===== */
+.notifikasi .dropdown-toggle::after {
+    display: none !important;
+}
+
+.btn-notif {
+    padding: 5px;
+    border-radius: 4px;
+    color: #868d96;
+    position: relative;
+}
+
+.notif-aktif {
+    color: #fff !important;
+    background-color: #00A3FF !important;
+}
+
+.icon-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #dc3545;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.iconTopbar {
+    height: 24px;
+    width: 24px;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    background-color: #101010;
+}
+
+.conDropdownProfil {
+    min-width: 375px;
+    border-radius: 5px;
+}
+
+.notifikasi-body {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.icon-notifikasi {
+    padding: auto;
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+.main-notifikasi {
+    width: 75%;
+}
+
+.main-notifikasi div:first-child {
+    font-weight: 600;
+}
+
+.hidden-div {
+    display: none;
+}
+
+.bg-soft-gray {
+    background-color: #f8f9fa;
+}
+
+.btn-soft-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.btn-soft-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.btn-soft-blue {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.height-fit-content {
+    height: fit-content;
+}
+
+.icon-warning {
+    color: #856404;
+}
+
+.icon-danger {
+    color: #721c24;
+}
+
+.icon-blue {
+    color: #084298;
+}
+
+.width100 {
+    width: 100% !important;
+}
+
+.btnBlueCus {
+    background-color: #00A3FF !important;
+    color: #fff;
+    font-size: 15px;
+}
+
+/* ===== Profile Dropdown ===== */
+.profile-dropdown {
+    display: grid;
+    align-items: center;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 6px 10px;
+    border: unset;
+    border-radius: 8px;
+    transition: 0.2s;
+    background-color: unset;
+}
+
+.profile-btn:hover {
+    background: #F9FAFB;
+}
+
+.profile-avatar,
+.profile-initial {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    object-fit: cover;
+}
+
+.profile-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4F46E5;
+    color: #fff;
+    font-weight: 600;
+}
+
+.profile-name-inline {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.profile-menu {
+    min-width: 300px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.profile-header {
+    text-align: center;
+    padding: 20px 16px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.profile-avatar-lg,
+.profile-initial-lg {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.profile-avatar-lg {
+    object-fit: cover;
+}
+
+.profile-initial-lg {
+    background: #4F46E5;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.profile-email {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.profile-role {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 10px;
+    font-size: 12px;
+    background: #EEF2FF;
+    color: #4F46E5;
+    border-radius: 999px;
+}
+
+.profile-entity {
+    font-size: 11px;
+    color: #6B7280;
+    margin-top: 6px;
+}
+
+.profile-action {
+    padding: 8px 0;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    color: #111827;
+}
+
+.profile-item:hover {
+    background: #F3F4F6;
+}
+
+.profile-item.danger {
+    color: #DC2626;
+}
+
+.profile-item.danger:hover {
+    background: #FEE2E2;
+}
+
+/* ===== Utilities ===== */
+.side-nav-button {
+    cursor: pointer;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.hide-on-print {
+    @media print {
+        display: none;
+    }
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 1024px) {
+    .home {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .sidebar.close {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar.close {
+        width: 0;
+    }
+
+    .offCanvas.show~.home,
+    .sidebar.close~.home {
+        left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 485px) {
+    .conDropdownProfil {
+        min-width: 375px;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .conDropdownProfil {
+        width: 100%;
+    }
+}
+
+.home {
+    background-color: #ffffff;
+}

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarPengaturanComponent } from './components/sidebar-pengaturan/sidebar-pengaturan.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { AdminMainLayoutComponent } from './components/admin-main-layout/admin-main-layout.component';
 
 
 
@@ -12,7 +13,8 @@ import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.com
   declarations: [
     MainLayoutComponent,
     SidebarMenuComponent,
-    SidebarPengaturanComponent
+    SidebarPengaturanComponent,
+    AdminMainLayoutComponent
   ],
   imports: [
     CommonModule,
